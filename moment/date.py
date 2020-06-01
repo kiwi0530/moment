@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+###
+# File Created: Monday, 1st June 2020 7:48:16 pm
+# Author: user (kiwi0530@gmail.com)
+# -----
+# Copyright 2012 - 2024 DataTech (Kevin Lee)Kiwi<kiwi0530@mail.com>
+# Unauthorized copying of this file and/or their product, via any medium is strictly prohibited
+# Proprietary and confidential
+###
 """
 Where the magic happens.
 """
@@ -8,10 +17,10 @@ import pytz
 
 from .utils import _iteritems
 
-
 # ----------------------------------------------------------------------------
 # Utilities
 # ----------------------------------------------------------------------------
+
 
 def add_month(date, number):
     """Add a number of months to a date."""
@@ -37,9 +46,9 @@ def update_month(date, month):
 # Main functionality
 # ----------------------------------------------------------------------------
 
+
 class MutableDate(object):
     """Incapsulate mutable dates in one class."""
-
     def __init__(self, date):
         self._date = date
 
@@ -163,6 +172,11 @@ class MutableDate(object):
     def date(self):
         """Access the internal datetime variable."""
         return self._date
+
+    @property
+    def py_date(self):
+        """Cooperate with python original date object."""
+        return self._date.date()
 
     @property
     def year(self):
